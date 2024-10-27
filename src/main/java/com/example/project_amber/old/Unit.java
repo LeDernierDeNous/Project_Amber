@@ -1,3 +1,5 @@
+package com.example.project_amber.old;
+
 public abstract class Unit {
     protected String type;
     protected int attackPower;

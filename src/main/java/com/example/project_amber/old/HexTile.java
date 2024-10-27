@@ -1,3 +1,5 @@
+package com.example.project_amber.old;
+
 public class HexTile {
     private int q;
     private int r;
@@ -23,7 +25,7 @@ public class HexTile {
 
     @Override
     public String toString() {
-        return "HexTile at (" + q + ", " + r + "), Biome: " + biomes + ", Resource: "
+        return "com.example.project_amber.old.HexTile at (" + q + ", " + r + "), Biome: " + biomes + ", Resource: "
                 + getResourceType() + " (Multiplier: " + getResourceMultiplier() + ")";
     }
 }

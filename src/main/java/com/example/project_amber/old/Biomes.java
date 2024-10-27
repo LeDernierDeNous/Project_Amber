@@ -1,3 +1,5 @@
+package com.example.project_amber.old;
+
 public enum Biomes {
     PLAIN("Wheat", 1),
     FOREST("Wood", 1),

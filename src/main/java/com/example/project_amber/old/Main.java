@@ -1,3 +1,5 @@
+package com.example.project_amber.old;
+
 public class Main {
     public static void main(String[] args) {
         // Créer des ressources
@@ -21,14 +23,14 @@ public class Main {
 
         // Construire des villes
         City city1 = new City("Fortress", player1);
-        City city2 = new City("Castle", player2);
+        City city2 = new City("com.example.project_amber.old.Castle", player2);
 
         // Construire des bâtiments
-        Building barracks = new Building("Barracks", 0, 2);
-        city1.build(barracks);
+        //com.example.project_amber.old.Building barracks = new com.example.project_amber.old.Building("Barracks", 0, 2);
+        //city1.build(barracks);
 
-        Building farm = new Building("Farm", 3, 0);
-        city2.build(farm);
+        //com.example.project_amber.old.Building farm = new com.example.project_amber.old.Building("com.example.project_amber.old.Farm", 3, 0);
+        //city2.build(farm);
 
         // Produire des unités
         city1.produceUnit("Infantry");
@@ -40,11 +42,11 @@ public class Main {
         archer.attack(knight);
 
         // Créer des bâtiments
-        Building farm = new Farm();
-        Building wall = new Wall();
+        //com.example.project_amber.old.Building farm = new com.example.project_amber.old.Farm();
+        //com.example.project_amber.old.Building wall = new com.example.project_amber.old.Wall();
 
-        farm.produce();
-        wall.produce();
+        //farm.produce();
+        //wall.produce();
 
         // Échanger des ressources
         player1.trade(player2);

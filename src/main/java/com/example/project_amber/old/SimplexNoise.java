@@ -1,3 +1,5 @@
+package com.example.project_amber.old;
+
 public class SimplexNoise {
     public static double noise(double x, double y) {
         // Implémentation de Simplex Noise ou Perlin Noise

@@ -1,3 +1,5 @@
+package com.example.project_amber.old;
+
 public abstract class Building {
     protected String type;
     protected int productionRate;

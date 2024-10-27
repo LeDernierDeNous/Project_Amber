@@ -1,3 +1,5 @@
+package com.example.project_amber.old;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +43,7 @@ public class City {
         }
 
         System.out.println(owner.getName() + " has produced a " + unitType + " in " + name);
-        owner.addUnit(newUnit); // Assuming addUnit method is defined in Player
+        owner.addUnit(newUnit); // Assuming addUnit method is defined in com.example.project_amber.old.Player
     }
 
 

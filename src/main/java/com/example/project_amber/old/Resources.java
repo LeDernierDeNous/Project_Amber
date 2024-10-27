@@ -1,3 +1,5 @@
+package com.example.project_amber.old;
+
 public class Resources {
     private int wheat;
     private int wood;

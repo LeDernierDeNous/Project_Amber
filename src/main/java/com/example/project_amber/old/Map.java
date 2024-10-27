@@ -1,3 +1,5 @@
+package com.example.project_amber.old;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +17,7 @@ public class Map {
         territories.add(new Territory("Forest", "Woodland", new Resources()));
         territories.add(new Territory("Mountain", "Rocky", new Resources()));
         // Ajouter d'autres territoires selon la logique de génération
-        System.out.println("Map generated with " + territories.size() + " territories.");
+        System.out.println("com.example.project_amber.old.Map generated with " + territories.size() + " territories.");
     }
 
     public Territory getTerritory(String name) {
