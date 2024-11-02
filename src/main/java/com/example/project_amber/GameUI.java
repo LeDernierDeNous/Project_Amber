@@ -19,7 +19,7 @@ public class GameUI extends Application {
         mapRenderer.renderMap(gridPane);
 
         Scene scene = new Scene(gridPane, 800, 600);
-        primaryStage.setTitle("STR game");
+        primaryStage.setTitle("Project Amber game");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
