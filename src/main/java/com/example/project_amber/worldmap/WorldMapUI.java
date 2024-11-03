@@ -1,25 +1,37 @@
 package com.example.project_amber.worldmap;
 
+import com.example.project_amber.worldmap.biomes.Biome;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.transform.Scale;
 
-public class WorldMap extends Pane {
+import java.io.IOException;
 
-    private double initialX;
-    private double initialY;
-    private double scaleFactor = 1.0;
+import static com.example.project_amber.GameUI.MAP_FILE_PATH;
+
+public class WorldMapUI extends Pane {
+
     private static final double SCALE_STEP = 0.1;
     private final GridPane gridPane;
     private final Scale scale;
+    private double initialX;
+    private double initialY;
+    private double scaleFactor = 1.0;
+    private final MapController mapcontroller;
+    private final MapRenderer mapRenderer;
 
-    public WorldMap(int rows, int cols) {
+    public WorldMapUI(int rows, int cols) throws IOException {
         // Initialize the grid pane and map
         gridPane = new GridPane();
-        MapRenderer mapRenderer = new MapRenderer(rows, cols);
+        this.mapRenderer = new MapRenderer(rows, cols);
         mapRenderer.renderMap(gridPane);
+
+        // Load map data from JSON if available
+        this.mapcontroller = new MapController(rows,cols);
+        Biome[][] biomes = mapcontroller.loadOrGenerateMap(MAP_FILE_PATH);
+        mapRenderer.setBiomes(biomes);
 
         // Create and apply the scale transformation
         scale = new Scale(scaleFactor, scaleFactor, 0, 0);
@@ -67,5 +79,9 @@ public class WorldMap extends Pane {
             scale.setX(scaleFactor);
             scale.setY(scaleFactor);
         });
+    }
+
+    public void closeWorldMap() throws IOException {
+        mapcontroller.saveMap(mapRenderer.getBiomes(), MAP_FILE_PATH);
     }
 }
