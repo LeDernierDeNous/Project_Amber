@@ -1,4 +1,4 @@
-package com.example.project_amber;
+package com.example.project_amber.fx_old;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

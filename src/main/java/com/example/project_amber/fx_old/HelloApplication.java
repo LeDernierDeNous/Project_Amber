@@ -1,4 +1,4 @@
-package com.example.project_amber;
+package com.example.project_amber.fx_old;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
