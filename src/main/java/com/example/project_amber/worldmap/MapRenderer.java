@@ -1,4 +1,4 @@
-package com.example.project_amber;
+package com.example.project_amber.worldmap;
 
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;

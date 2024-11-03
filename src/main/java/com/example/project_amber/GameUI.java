@@ -1,8 +1,8 @@
 package com.example.project_amber;
 
+import com.example.project_amber.worldmap.WorldMap;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class GameUI extends Application {
@@ -13,13 +13,13 @@ public class GameUI extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        GridPane gridPane = new GridPane();
+        // Create the WorldMap object with specified grid size
+        WorldMap worldMap = new WorldMap(10, 10);
 
-        MapRenderer mapRenderer = new MapRenderer(10,10);
-        mapRenderer.renderMap(gridPane);
+        // Set up the scene and add the worldMap to it
+        Scene scene = new Scene(worldMap, 800, 600);
 
-        Scene scene = new Scene(gridPane, 800, 600);
-        primaryStage.setTitle("Project Amber game");
+        primaryStage.setTitle("Project Amber Game");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
