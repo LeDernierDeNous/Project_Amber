@@ -5,6 +5,7 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.transform.Scale;
 
 import java.io.IOException;
@@ -20,18 +21,15 @@ public class WorldMapUI extends Pane {
     private double initialY;
     private double scaleFactor = 1.0;
     private final MapController mapcontroller;
-    private final MapRenderer mapRenderer;
 
     public WorldMapUI(int rows, int cols) throws IOException {
         // Initialize the grid pane and map
         gridPane = new GridPane();
-        this.mapRenderer = new MapRenderer(rows, cols);
-        mapRenderer.renderMap(gridPane);
 
         // Load map data from JSON if available
         this.mapcontroller = new MapController(rows,cols);
-        Biome[][] biomes = mapcontroller.loadOrGenerateMap(MAP_FILE_PATH);
-        mapRenderer.setBiomes(biomes);
+        mapcontroller.loadOrGenerateMap(MAP_FILE_PATH);
+        mapcontroller.renderMap(gridPane);
 
         // Create and apply the scale transformation
         scale = new Scale(scaleFactor, scaleFactor, 0, 0);
@@ -82,6 +80,6 @@ public class WorldMapUI extends Pane {
     }
 
     public void closeWorldMap() throws IOException {
-        mapcontroller.saveMap(mapRenderer.getBiomes(), MAP_FILE_PATH);
+        mapcontroller.saveMap(MAP_FILE_PATH);
     }
 }

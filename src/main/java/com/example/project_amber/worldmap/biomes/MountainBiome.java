@@ -4,6 +4,6 @@ import javafx.scene.paint.Color;
 
 public class MountainBiome extends Biome {
     public MountainBiome() {
-        super("Mountain", Color.DARKGRAY, "Ore", 1);
+        super("Mountain", Color.LIGHTSLATEGRAY, "Ore", 1);
     }
 }
